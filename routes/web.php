@@ -26,8 +26,6 @@ use App\Http\Controllers\backend\AdminProductController;
 // });
 
 // @Backend
-
-
 Route::get('/signin', [AdminController::class, 'signin'])->name('login');
 Route::post('/signin-submit', [AdminController::class, 'signinSubmit']);
 
@@ -38,7 +36,6 @@ Route::post('/signup-submit', [AdminController::class, 'signupSubmit']);
 Route::middleware(['auth'])->group(function () {
 
 Route::get('/', [AdminController::class, 'index']);
-
 // @ logout
 Route::get('/admin/logout', [AdminController::class, 'UserLogout']);
 
@@ -46,9 +43,6 @@ Route::get('/admin/logout', [AdminController::class, 'UserLogout']);
 // List logo
 Route::get('/admin/list-logo' , [AdminController::class , 'ListLogo'])->name('list-logo');
 // add logo
-
-
-
 Route::get('/admin/add-logo' , [AdminController::class , 'addLogo'] );
 Route::post('/admin/add-logo-submit' , [AdminController::class , 'addLogoSubmit'] );
 // edit
@@ -58,33 +52,6 @@ Route::post('/admin/edit-logo-submit' , [AdminController::class , 'EditLogoSubmi
 // remove
 Route::get('/admin/remove-logo/{id}' , [AdminController::class , 'RemoveLogo'] );
 Route::post('/admin/remove-logo-submit' , [AdminController::class , 'RemoveLogoSubmit'] );
-
-
-// product
-Route::get('/admin/list-product' , [AdminProductController::class , 'ListProduct'] );
-// product
-Route::get('/admin/add-product' , [AdminProductController::class , 'AddProduct'] );
-Route::post('/admin/add-product-submit' , [AdminProductController::class , 'AddProductSubmit'] );
-
-
-// views
-Route::get('/admin/view-product={id}' , [AdminProductController::class , 'ViewProduct'] );
-
-// edit
-Route::get('/admin/edit-product={id}' ,     [AdminProductController::class , 'EditProduct'] );
-Route::post('/admin/edit-product-submit' , [AdminProductController::class , 'EditProductSubmit'] );
-
-
-// remove
-Route::get('/admin/remove-product={id}' ,    [AdminProductController::class , 'RemoveProduct'] );
-Route::post('/admin/remove-product-submit' , [AdminProductController::class , 'RemoveProductSubmit'] );
-// end of product
- 
-// Category
-
-
-
-
 
 
 
@@ -117,47 +84,6 @@ Route::post('/edit-repairer-submit',    [RepairerController::class, 'EditRepaire
 // remove repairer
 Route::get('/remove-repairer/{id}',     [RepairerController::class, 'RemoveRepairer']);
 Route::post('/remove-repairer-submit',  [RepairerController::class, 'RemoveRepairerSubmit']);
-
-
-
-
-
-
-
-
-
-
-//edit
-Route::get('/admin/edit-category={id}',            [CategoryController::class, 'EditCategory']); 
-
-Route::post('/admin/edit-category-submit',            [CategoryController::class, 'EditCategorySubmit']); 
-
-// remove-category
-Route::get('/admin/remove-category={id}',            [CategoryController::class, 'removeCategory']); 
-
-Route::post('/admin/remove-category-submit',            [CategoryController::class, 'removeCategorySubmit']); 
-
-//end of Category
-
-
-//Activity
-Route::get('/admin/log-activity/{page}',            [ActivityController::class, 'ListActivity']); 
-
-//Activity Search
-Route::get('/admin/log-activity/1/search',            [ActivityController::class, 'search']); 
-
-//news
-Route::get('/admin/list-news',               	 [AdminNewsController::class, 'ListNews']);
-// add news
-Route::get('/admin/add-news',               	 [AdminNewsController::class, 'AddNews']); 
-Route::post('/admin/add-news-submit',            [AdminNewsController::class, 'AddNewsSubmit']); 
-// remove news
-Route::get('/admin/remove-news={id}',               	 [AdminNewsController::class, 'removeNews']); 
-Route::post('/admin/remove-news-submit',            [AdminNewsController::class, 'removeNewsSubmit']); 
-
-// edit news
-Route::get('/admin/edit-news={id}',               	 [AdminNewsController::class, 'editNews']); 
-Route::post('/admin/edit-news-submit',            [AdminNewsController::class, 'editNewsSubmit']); 
 
 });
 

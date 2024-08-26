@@ -99,12 +99,6 @@ class AdminController extends Controller
 
         return view('backend.list-logo' , ['objLogo' => $objLogo , 'countLogo'=>$countLogo ]);
     }
-
-//     public function ListCout(){
-//         $count = DB::table('website_logo')->count();
-
-//         return view('backend.list-logo' , ['count' => $count]);
-// }
     
     // @Add Logo
     public function addLogo(){

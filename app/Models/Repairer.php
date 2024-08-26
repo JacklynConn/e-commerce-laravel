@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Repairer extends Model
 {
     use HasFactory;
-    protected $table = "repairers";
+    protected $table = "repairer";
     protected $fillable = [
         'servicetype_id',
         'name',

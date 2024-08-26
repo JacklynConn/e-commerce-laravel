@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('repairers', function (Blueprint $table) {
+        Schema::create('repairer', function (Blueprint $table) {
             $table->id();
             $table->foreignId('servicetype_id')->constrained('service_types');
             $table->string('name');

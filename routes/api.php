@@ -17,5 +17,6 @@ use App\Http\Controllers\api\IndexController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/service',       [IndexController::class, 'service']);
-Route::post('/repairer',       [IndexController::class, 'fnRepairer']);
+Route::get('/service',                  [IndexController::class, 'service']);
+Route::post('/repairer',                [IndexController::class, 'fnRepairer']);
+Route::post('/register-customer',       [IndexController::class, 'fnRegister']);

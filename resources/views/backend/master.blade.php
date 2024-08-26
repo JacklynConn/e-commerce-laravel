@@ -43,10 +43,9 @@
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!-- Menu -->
-
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
-                    <a href="index.html" class="app-brand-link">
+                    <a href="/" class="app-brand-link">
                         <span class="app-brand-logo demo">
                             <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -105,7 +104,7 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item">
-                        <a href="/admin" class="menu-link">
+                        <a href="/" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
@@ -115,17 +114,16 @@
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-bolt-circle"></i>
-                            <div data-i18n="Layouts">Logo</div>
+                            <div data-i18n="Layouts">Service Type</div>
                         </a>
-
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="/admin/list-logo" class="menu-link">
+                                <a href="/list-service" class="menu-link">
                                     <div data-i18n="Without menu">View Post</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="/admin/add-logo" class="menu-link">
+                                <a href="/add-service" class="menu-link">
                                     <div data-i18n="Without menu">Add Post</div>
                                 </a>
                             </li>
@@ -154,20 +152,22 @@
                     </li>
 
 
+
                     <!-- Layouts -->
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-bolt-circle"></i>
-                            <div data-i18n="Layouts">Service Type</div>
+                            <div data-i18n="Layouts">Logo</div>
                         </a>
+
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="/list-service" class="menu-link">
+                                <a href="/" class="menu-link">
                                     <div data-i18n="Without menu">View Post</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="/add-service" class="menu-link">
+                                <a href="/" class="menu-link">
                                     <div data-i18n="Without menu">Add Post</div>
                                 </a>
                             </li>
@@ -208,23 +208,18 @@
 
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                         <!-- Search -->
-                        {{-- <form action="" method="get">
-                <div class="navbar-nav align-items-center">
-                  <div class="nav-item d-flex align-items-center">
-                    <i class="bx bx-search fs-4 lh-0"></i>
-                    <input
-                      type="text"
-                      class="form-control border-0 shadow-none"
-                      placeholder="Search..."
-                      aria-label="Search..."
-                    />
-                  </div>
-                </div> --}}
+                        <form action="" method="get">
+                            <div class="navbar-nav align-items-center">
+                                <div class="nav-item d-flex align-items-center">
+                                    <i class="bx bx-search fs-4 lh-0"></i>
+                                    <input type="text" class="form-control border-0 shadow-none"
+                                        placeholder="Search..." aria-label="Search..." />
+                                </div>
+                            </div>
                         </form>
                         <!-- /Search -->
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
-
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
@@ -248,8 +243,8 @@
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
                                                         @if (Auth::User()->profile != '')
-                                                            <img src="{{ url('uploads/' . Auth::User()->profile) }}" alt
-                                                                class="w-px-40 h-auto rounded-circle" />
+                                                            <img src="{{ url('uploads/' . Auth::User()->profile) }}"
+                                                                alt class="w-px-40 h-auto rounded-circle" />
                                                         @else
                                                             <img src="https://th.bing.com/th/id/OIP.xo-BCC1ZKFpLL65D93eHcgHaGe?w=231&h=202&c=7&r=0&o=5&pid=1.7"
                                                                 alt class="w-px-40 h-auto rounded-circle" />

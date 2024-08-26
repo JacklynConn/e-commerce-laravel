@@ -32,7 +32,7 @@
                             </div>
                             {{-- regular_price --}}
                             <div class="mb-3 col-6">
-                                <label for="forFile" class="form-label">Regular Price</label>
+                                <label for="forFile" class="form-label">Status</label>
                                 <input value="{{ $EditService[0]->status }}" type="number" name="status"
                                     class="form-control" placeholder="0" id="">
                             </div>

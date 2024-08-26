@@ -22,7 +22,7 @@ class ServiceController extends Controller
     public function AddServiceSubmit(Request $request){
         $name = $request->input('name');
         $icon_code = $request->input('icon_code');
-        $status = $request->input('status');
+        $status = $request->input('status', 1);
         $Service = DB::table('service_types')
                 ->insert([
                     'name' => $name,
@@ -71,10 +71,12 @@ class ServiceController extends Controller
     }
     public function RemoveServiceSubmit(Request $request){
         $id = $request->input('id');
-        $RemoveService = DB::table('service_types')
-                    ->where('id' , $id)
-                    ->delete();
+        $RemoveService = DB::table('service_types')->where('id' , $id)->first();
         if($RemoveService){
+            DB::table('service_types')
+                ->where('id', $id)
+                ->update(['status' => 0]);
+
             return redirect('list-service');
         }
     }

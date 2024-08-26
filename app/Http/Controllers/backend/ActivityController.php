@@ -29,7 +29,6 @@ class ActivityController extends Controller
 
 
     // search
-
     public function search(Request $request){
         $searchValue = $request->input('q');
 
@@ -41,6 +40,5 @@ class ActivityController extends Controller
                     ->get();
 
                 return view('backend.search-activity' , ['Activity'=>$Activity , 'searchValue'=>$searchValue]);
-
     }
 }
